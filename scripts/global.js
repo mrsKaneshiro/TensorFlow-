@@ -1,4 +1,7 @@
 function addLoadEvent(func) {
+    /**
+     * 创建了一个函数执行队列
+     */
     var oldonload=window.onload;
     if(typeof window.onload!='function'){
         window.onload=func;
@@ -30,3 +33,18 @@ function addClass(element,value) {
     }
 }
 
+function highLightPage() {
+    var links=document.querySelectorAll("a");
+    var linkURL;
+    for(var i=0;i<links.length;i++) {
+        linkURL = links[i].href;
+        if (window.location.href.indexOf(linkURL) != -1) {
+            links[i].className = "here";
+            var linksText = links[i].innerText.toLowerCase();
+            document.body.id = linksText;
+            console.log(document.body);
+        }
+    }
+}
+
+addLoadEvent(highLightPage);

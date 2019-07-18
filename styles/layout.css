@@ -1,0 +1,12 @@
+#about header{
+    background-color: #779999;
+}
+#photos header{
+    background-color: #eecc88;
+}
+#live header{
+    background-image: url("../images/blue.jpg");
+}
+#contact header{
+    background-image: url("../images/blue.jpg");
+}
