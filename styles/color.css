@@ -1,0 +1,58 @@
+a:link {
+    color:#445;
+    background-color: #eb6;
+}		/* 未访问的链接 */
+a:visited {
+    color: #345;
+    background-color: #eb6;
+}	/* 已访问的链接 */
+a:hover {
+    color: #667;
+    background-color:#fb5;
+}	/* 鼠标移动到链接上 */
+a:active {
+    color: #778;
+    background-color:#ec8;
+}	/* 选定的链接 */
+body{
+    color:#fb5;
+    background-color: #334;
+}
+header{
+    color:#ec8;
+    background-color: #334;
+    border-color: #667;
+}
+header nav{
+    color:#455;
+    background-color: #789;
+    border: #667;
+}
+article{
+    color:#223;
+    background-color: #edc;
+    border: #667;
+}
+header nav ul{
+    border: #99a;
+}
+header nav a:link,header nav a:visited{
+    color:#eef;
+    background-color: transparent;
+    border: #99a;
+}
+header nav a:hover{
+    color:#445;
+    background-color: #eb6;
+}
+header nav a:active{
+    color: #667;
+    background-color: #ec8;
+}
+article img{
+    border-color: #ba9;
+    outline-color: #dcb;
+}
+#imagegallery a{
+    border-color: transparent;
+}
