@@ -1,12 +1,80 @@
+/*
+清除浏览器的默认配置
+ */
+section,header,article,nav{
+    display: block;
+}
+*{
+    padding: 0;
+    margin: 0;
+}
+
+#home header{
+    background-image: url("../images/blue.jpg");
+    background-repeat: repeat;
+}
 #about header{
-    background-color: #779999;
+    background-image: url("../images/blue.jpg");
+    background-repeat: repeat;
 }
 #photos header{
-    background-color: #eecc88;
+    background-image: url("../images/blue.jpg");
+    background-repeat: repeat;
 }
 #live header{
     background-image: url("../images/blue.jpg");
+    background-repeat: repeat;
 }
 #contact header{
     background-image: url("../images/blue.jpg");
+    background-repeat: repeat;
+}
+
+body{
+    margin: 1em 10%;
+    background-attachment: fixed;
+    background-position: top left;
+    background-repeat: repeat-x;
+    max-width: 80em;
+}
+header{
+    background-repeat:no-repeat;
+    background-position: bottom right;
+    border-width: .1em;
+    border-style: solid;
+    border-bottom-width: 0;
+}
+header nav{
+    background-image: url("../images/navbar.jpg");
+    background-position: bottom right;
+    background-repeat: repeat-x;
+    border-width: .1em;
+    border-style: solid;
+    border-bottom-width: 0;
+    padding-left: 10%;
+}
+header nav ul{
+    width: 100%;
+    overflow: hidden;
+    border-left-width: .1em;
+    border-left-style: solid;
+}
+header nav li{
+    display: inline;
+}
+header nav li a{
+    display: block;
+    float: left;
+    padding: .5em 2em;
+    line-height:1.8em
+}
+article img{
+    border-width: .1em;
+    border-style: solid;
+    outline-style: solid;
+    outline-width: .1em;
+}
+article{
+    background-image: url("../images/blue.jpg");
+    background-repeat: repeat;
 }

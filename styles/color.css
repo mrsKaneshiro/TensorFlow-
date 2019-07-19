@@ -30,14 +30,15 @@ header nav{
 }
 article{
     color:#223;
-    background-color: #edc;
+   /* background-color: #edc;
+    */
     border: #667;
 }
 header nav ul{
     border: #99a;
 }
 header nav a:link,header nav a:visited{
-    color:#eef;
+    color:#455;
     background-color: transparent;
     border: #99a;
 }
