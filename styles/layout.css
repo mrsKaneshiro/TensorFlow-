@@ -78,3 +78,6 @@ article{
     background-image: url("../images/blue.jpg");
     background-repeat: repeat;
 }
+#imagegallery li{
+    display: inline;
+}
