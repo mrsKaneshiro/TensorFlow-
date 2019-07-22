@@ -81,3 +81,7 @@ article{
 #imagegallery li{
     display: inline;
 }
+
+td{
+    padding: .5em 3em;
+}
