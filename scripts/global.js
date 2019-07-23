@@ -10,9 +10,7 @@ function preparePlaceholder(){
     try{
         var ul=document.getElementById("imagegallery");
         insertAfter(img,ul);
-        console.log("img")
         insertAfter(p,img);
-        console.log("p")
     }catch (e) {
         var ul=document.querySelector("ul")
     }
@@ -179,6 +177,62 @@ function stripe() {
         }
     }
 }
+function isFilled(elem) {
+    /*用于检测required的input是否已经输入
+    * 有时候浏览器不能判断的时候可以使用这个方法
+    * */
+    if(elem.value.replace(" ","").length==0)
+        return false;
+    var placeholder=elem.placeholder||elem.getAttribute("placeholder");
+    return (elem.value!=placeholder)
+    //返回一个布尔值 如果输入了，返回true
+}
+function isEmail(elem) {
+    return( elem.value.indexOf("@")!=-1 && elem.value.indexOf(".")!=-1);
+    // 返回一个布尔值，如果输入了@ 和. 则认为用户已经输入
+}
+function validateForm() {
+    /***
+     * 检测表单填写的是否正确
+     * 用JS做了简单的处理，验证一些页面
+     * 本项目中的form表单就一个，所以没有用参数的形式传递
+     */
+    var form=document.querySelector("form")
+    //遍历这个form
+    for(var i=0;i<form.elements.length;i++){
+        var elem=form.elements[i];
+        if(elem.hasAttribute("required")){
+            //console.log(elem.hasAttribute("required"));
+            if(!isFilled(elem)){
+                alert("表单没有输入完整")
+                return false
+            }
+            if(elem.type="email"){
+                if(!isEmail(elem)){
+                    alert("Email没有输入完整")
+                    return false
+                }
+            }
+        }
+        console.log("validateForm执行完成")
+    }
+    return true;
+}
+function focusLabels(){
+    /**
+     * 点击label标签会让对应的input自动获取焦点
+     * 当浏览器不具有这种默认行为的时候。
+     */
+    var label=document.querySelectorAll("label");
+    for(var i=0;i<label.length;i++){
+        label[i].onclick=function () {
+            var id=this.getAttribute("for");
+            var elem=document.getElementById(id);
+            elem.focus();
+        }
+    }
+    console.log("focusLabels执行结束")
+}
 function highlight () {
     var row=document.getElementsByTagName("tr");
     for (var j=0;j<row.length;j++){
@@ -190,8 +244,51 @@ function highlight () {
         }
     }
 }
+function getHTTPObject() {
+    /*
+    简历XMLHtttpRequset对象的通用方法
+     */
+    if(typeof XMLHttpRequest=='undefined'){
+        XMLHttpRequest=function(){
+            try{
+                return  new ActiveXObject("Msxml2.XMLHTTP.6.0");
+            }catch (e) {
+
+            }
+            try {
+                return  new ActiveXObject("Msxml2.XMLHTTP.3.0");
+            }catch (e) {
+
+            }
+            try {
+                return  new ActiveXObject("Msxml2.XMLHTTP");
+            }catch (e) {
+
+            }
+            return false;
+        }
+    }
+    console.log("getHTTPObject-----执行完成")
+    return new XMLHttpRequest()
+}
+function displayAjaxLoading(element) {
+    //动态在elememnt下面，创建一个IMG 标签
+    while(element.hasChileNodes()){
+        element.removeChild(element.lastChild);
+    }
+    var content=document.createElement("img");
+    content.setAttribute("src","images/loading.jpg");
+    content.setAttribute("alt","Loading");
+    element.appendChild(content)
+
+}
+
+
+
+
 addLoadEvent(highLightPage);
 addLoadEvent(stripe);
+addLoadEvent(focusLabels)
 addLoadEvent(prepareInternalnav);
 addLoadEvent(preparePlaceholder);
 addLoadEvent(prepareGallery);

@@ -38,7 +38,8 @@ body{
     max-width: 80em;
 }
 header{
-    background-repeat:no-repeat;
+    background-image: url(../images/blue.jpg);
+    background-repeat: repeat;
     background-position: bottom right;
     border-width: .1em;
     border-style: solid;
