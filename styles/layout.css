@@ -89,3 +89,13 @@ article{
 td{
     padding: .5em 3em;
 }
+
+#preview{
+    position: absolute;
+}
+#slideshow{
+    position: relative;
+    overflow: hidden;
+    width: 214px;
+    height: 213px;
+}
